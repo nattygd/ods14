@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Registro de usuario</title>
+        <meta name="authors" content="Nathaly Gonzales; Kevin Luksic; Daniel Navarrete">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Archivos CSS-->
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <!--Archivos JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <script src="js/regiones.js"></script>
+        <script src="js/validaciones.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo de la Empresa">
+                <span>ODS14</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="objetivos.html">Objetivos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="agrupaciones.html">Agrupaciones</a></li>
+                </ul>
+            </nav>
+            <div class="login-button">
+                <a href="inicio-sesion.html">Iniciar Sesión</a>
+            </div>
+        </header>
+        <div class="container">
+            <div class="titulo">
+                <h1 class="titulo">Registrate</h1>
+            </div>
+            <form id="form-signup">
+                <div class="primera-fila">
+                    <ul id="campos">
+                        <li>
+                            <div class="campo">
+                                <label for="nombre">Nombre de usuario</label>
+                                <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ej: pepito29">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="campo">
+                                <label for="rut">RUT</label>
+                                <input type="text" name="rut" class="form-control" id="rut" placeholder="Formato: 12345678-9">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="campo">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="@">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="campo">
+                                <label for="regiones">Región</label>
+                                <select class=form-select id="regiones" name="regiones">
+                                    <!--Carga de regiones-->
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="campo">
+                                <label for="comunas">Comuna</label>
+                                <select class=form-select id="regiones" name="regiones">
+                                    <!--Carga de comunas-->
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="segunda-fila">
+                    <ul id="campos">
+                        <li>
+                            <div class="campo">
+                                <label for="password">Contraseña</label>
+                                <input type="password" name="password" class="form-control" id="password">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="campo">
+                                <label for="password2">Confirmación de contraseña</label>
+                                <input type="password" name="password2" class="form-control" id="password2">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="campo">
+                                <label class="label cursor-pointer">
+                                    <input name="tyc" id="tyc" type="checkbox" class="checkbox mr-4" />
+                                    <span id="tyc-text" class="label-text">He leido y estoy de acuerdo con los términos y condiciones de la web</span> 
+                                  </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <button type="submit" class="blue-button"">Crear cuenta</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="circulo azul1"></div>
+        <div class="circulo celeste1"></div>
+        <div class="circulo azul2"></div>
+        <div class="circulo celeste2"></div>
+        <script src="" async defer></script>
+    </body>
+</html>
