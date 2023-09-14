@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Inicio de sesión</title>
-    <meta name="authors" content="Nataly Gonzalez; Kevin Luksic; Daniel Navarrete">
+    <title>Registro de usuario</title>
+    <meta name="authors" content="Nathaly Gonzales; Kevin Luksic; Daniel Navarrete">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Archivos CSS-->
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
@@ -16,14 +16,15 @@
     <!--Archivos JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="js/regiones.js"></script>
     <script src="js/validaciones.js"></script>
 </head>
 
 <body>
     <script src="" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>    
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -47,15 +48,15 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Importancia</a></li>
-                            <li><a class="dropdown-item" href="#">Metas</a></li>                            
+                            <li><a class="dropdown-item" href="#">Metas</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Agrupaciones</a>
                     </li>
                 </ul>
-                <div class="signin-button">
-                    <a href="registro.html">Registrarse</a>
+                <div class="login-button">
+                    <a href="inicio-sesion.html">Iniciar sesión</a>
                 </div>
             </div>
         </div>
@@ -64,27 +65,62 @@
     <div class="container login">
         <form id="form-login" class="form-login">
             <div class="titulo">
-                <h1 class="titulo">Iniciar sesión</h1>
+                <h1 class="titulo">Regístrate</h1>
             </div>
-            <div class="mb-3">
-                <label for="username" class="form-label">Nombre de usuario:</label>
-                <input type="text" id="username" name="username" class="form-control"
-                    placeholder="Ingrese su nombre de usuario" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña:</label>
-                <input type="password" id="password" name="password" class="form-control"
-                    placeholder="Ingrese su contraseña" required>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nombre de usuario</label>
+                        <input type="text" id="username" name="username" class="form-control" id="nombre"
+                            placeholder="Ingrese su nombre de usuario" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">RUT</label>
+                        <input type="text" id="username" name="username" class="form-control" id="rut"
+                            placeholder="Ingrese su RUT" required>
+                    </div>
+                    <div class="campo">
+                        <label for="regiones" class="form-label">Región</label>
+                        <select class=form-select id="regiones" name="regiones">
+                            <!--Carga de regiones-->
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="comunas" class="form-label">Comuna</label>
+                        <select class=form-select id="regiones" name="regiones">
+                            <!--Carga de comunas-->
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Correo electrónico</label>
+                        <input type="text" id="username" name="username" class="form-control" id="email"
+                            placeholder="Ingrese su correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" id="password" name="password" class="form-control" id="password"
+                            placeholder="Ingrese su contraseña" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Confirmación de contraseña</label>
+                        <input type="password" id="password" name="password" class="form-control" id="password2"
+                            placeholder="Reingrese su contraseña" required>
+                    </div>
+                </div>
+            </div>            
+            <div class="mb-3 form-check" style="padding-top: 3%;">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1" id="tyc-text">He leido y estoy de acuerdo con los términos y
+                    condiciones de la web.</label>
             </div>
             <div class="mb-3 blue-button">
-                <button type="submit" class="btn btn-primary">Ingresar</button>
-            </div>
-            <div class="mb-3">
-                <a href="registro.html" class="No_cuenta">¿No tienes una cuenta? Registrate</a>
+                <button type="submit" class="btn btn-primary">Crear cuenta</button>
             </div>
         </form>
-    </div>
-
+    </div> 
+    
     <footer class="footer-07">
         <div class="container">
             <div class="row justify-content-center">
@@ -104,7 +140,6 @@
                 <p>Copyright ODS14</p>
             </div>
         </div>
-    </footer>
+    </footer>      
 </body>
-
 </html>
