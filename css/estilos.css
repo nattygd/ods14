@@ -4,7 +4,7 @@
 }
 
 .navbar {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 18px;
     color: black;
     border-bottom: 1px solid #ccc;
@@ -16,13 +16,13 @@
 
 .signin-button a {
     padding: 10px 20px;
-    background-color: #1C95D3;
+    background-color: #1c95d3;
     border-radius: 6px;
     gap: 10px;
     text-align: center;
     text-decoration: none;
     color: #fff;
-    font-family: 'Manrope', sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: 15px;
     font-style: normal;
 }
@@ -35,13 +35,13 @@
     text-align: center;
     text-decoration: none;
     color: rgba(19, 105, 148, 1);
-    font-family: 'Manrope', sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: 15px;
     font-style: normal;
 }
 
 .titulo {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 34px;
     font-weight: bold;
     color: black;
@@ -63,7 +63,7 @@
     text-align: center;
     width: 700px;
     height: 680px;
-    background-color: #ADE8F4;
+    background-color: #ade8f4;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-inline: 40px;
@@ -80,7 +80,7 @@
 
 .form-login {
     height: 100%;
-    background-color: #ADE8F4;
+    background-color: #ade8f4;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-inline: 40px;
@@ -97,7 +97,7 @@
     display: flex;
     justify-content: center;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 12px;
 }
 
@@ -157,6 +157,81 @@ footer {
     text-decoration: none;
 }
 
+/*Carrusel imágenes*/
+a {
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+a,
+a:hover {
+    text-decoration: none !important;
+}
+
+.media-29101 img {
+    margin-bottom: 10px;
+}
+
+.media-29101 h3 {
+    font-size: 14px;
+    font-weight: 00 !important;
+}
+
+.media-29101 h3 a {
+    color: #056eca;
+}
+
+.owl-2-style .owl-nav {
+    display: none;
+}
+
+.owl-2-style .owl-dots {
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+}
+
+.owl-2-style .owl-dots .owl-dot {
+    display: inline-block;
+}
+
+.owl-2-style .owl-dots .owl-dot span {
+    display: inline-block;
+    width: 15px;
+    height: 3px;
+    border-radius: 6px;
+    background: #cccccc;
+    -webkit-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+    -o-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+    transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+    margin: 3px;
+}
+
+.owl-2-style .owl-dots .owl-dot.active span {
+    background: #007bff;
+}
+
+.owl-2-style .owl-dots .owl-dot:active,
+.owl-2-style .owl-dots .owl-dot:focus {
+    outline: none;
+}
+
+.video-responsive {
+	height: 80%;
+	overflow: hidden;
+	padding-bottom: 50%;
+	padding-top: 10px;
+	position: relative;
+	}
+    
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+	width: 40%;
+    height: 40%;
+	left: 10%;
+	position: absolute;
+	top: 0;
+}
 
 
 .circulo {
@@ -171,7 +246,7 @@ footer {
 }
 
 .circulo.azul1 {
-    background-color: #0074D9;
+    background-color: #0074d9;
     /* Color azul */
     top: 10%;
     left: 5%;
@@ -185,7 +260,7 @@ footer {
 }
 
 .circulo.azul2 {
-    background-color: #0074D9;
+    background-color: #0074d9;
     /* Color azul */
     top: 10%;
     left: 85%;
