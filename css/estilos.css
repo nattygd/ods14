@@ -65,21 +65,22 @@
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     padding-top: 2%;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 .error {
     color: red;
 }
 
-#form-signup {
+.signup {
+    padding-top: 2%;
+    padding-bottom: 2%;
     display: flex;
-    width: 50%;
-    height: auto;
-    margin: 10px auto;
-    text-align: center;
-    width: 700px;
-    height: 680px;
+    justify-content: center;
+}
+
+.form-signup {
+    height: 100%;
     background-color: #ade8f4;
     padding-top: 10px;
     padding-bottom: 10px;
