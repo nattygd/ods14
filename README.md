@@ -11,6 +11,6 @@
 - `Funcionalidad 9`:  Link's de youtube para visualizar videos y documentales relacionados con la ODS 14
 - `Funcionalidad 10`:  Contiene una barra de búsqueda que facilita encontrar recursos que se encuentren en el sitio web.
 
-###Links
+##Links
 
 `<link>`<https://www.figma.com/file/CSeFFoyAzXAev9fvl0QJQj/ODS-14?type=design&node-id=0%3A1&mode=design&t=kRqMHFL7jQI7Mjoy-1>
