@@ -27,6 +27,23 @@
     font-style: normal;
 }
 
+.input-group{
+    margin-inline: 3%;
+}
+
+.form-control{
+	border-radius: 7px;
+	border: 1.5px solid #E3E6ED;
+}
+
+.btn-primary{
+	background-color: #5878FF!important;
+	border-radius: 7px;
+}
+.btn-primary:focus{
+	box-shadow: none;
+}
+
 .login-button a {
     padding: 10px 20px;
     background-color: rgba(29, 159, 224, 0.5);
