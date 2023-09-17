@@ -231,11 +231,11 @@ iframe {
 }
 
 .conten {
-    padding: 3rem 9% ;
-    background: linear-gradient(90deg,rgb(34, 36, 41), rgba(34, 36, 41, 0.5));
+    padding: 3rem 9%;
+    background: linear-gradient(90deg, rgb(34, 36, 41), rgba(34, 36, 41, 0.5));
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
 }
 
 .conten h1 {
@@ -250,24 +250,24 @@ iframe {
     font-size: 1rem;
     margin: .5rem 0;
     letter-spacing: .02rem;
-    font-weight: 300;    
+    font-weight: 300;
 }
 
 .title1 {
-    padding: 1rem 9% ;
+    padding: 1rem 9%;
     color: #d8d8d8;
     font-size: 1.6rem;
 }
 
-.video{ 
+.video {
     border: 0.12rem solid #d8d8d8;
     border-radius: 2%;
 }
 
 .contvideos {
-    padding: 0 9% ;
-    margin: auto;    
-    display: grid;    
+    padding: 0 9%;
+    margin: auto;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 1.5rem;
     padding-bottom: 2rem;
@@ -322,63 +322,65 @@ iframe {
     border: 1px solid #f1f1f1;
     border-radius: 25px;
     perspective: 1000px;
-    
+
     margin: 2rem 0;
     background-image: url("https://img.freepik.com/vector-premium/ilustracion-fondo-mar-tiburones-peces_104785-705.jpg");
 }
 
 .flip-card-inner {
-position: relative;
-width: 100%;
-height: 100%;
-text-align: center;
-transition: transform 0.8s;
-transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 
-border-radius: 25px;
-box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
 }
 
 .flip-card:hover .flip-card-inner {
-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
-position: absolute;
-width: 100%;
-height: 100%;
--webkit-backface-visibility: hidden;
-backface-visibility: hidden;
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
-padding: 15px;
-border-radius: 25px;
+    padding: 15px;
+    border-radius: 25px;
 }
 
 .flip-card-front {
-background-color: #ffffff;
-color: black;
+    background-color: #ffffff;
+    color: black;
 }
 
 .flip-card-front h1.numero-card {
-font-size: 120px;
+    font-size: 120px;
 }
 
 .flip-card-front h1.texto-card {
-font-size: 75px;
+    font-size: 75px;
 }
 
 .flip-card-back {
-background-color: #ffffff;
-color: black;
-transform: rotateY(180deg);
+    background-color: #ffffff;
+    color: black;
+    transform: rotateY(180deg);
 }
 
-.flip-card-back h1, .flip-card-back p {
-color: black;
+.flip-card-back h1,
+.flip-card-back p {
+    color: black;
 }
 
 .flip-card-back p {
-font-size: 20px;
+    font-size: 20px;
 }
 
 .custom-heigth {
@@ -388,6 +390,7 @@ font-size: 20px;
     justify-content: center;
     font-size: large;
 }
+
 /*  ******************    */
 /*  Colores acordeones  */
 /*  ******************  */
@@ -540,8 +543,50 @@ font-size: 20px;
     background-color: #FF6F54;
     color: #000;
 }
+
 /*  ******************    */
 /*  Colores acordeones  */
 /*  ******************  */
+
+.fila {
+    list-style: none;
+    display: flex;
+}
+
+/*Comentar*/
+.comentar {
+    display: grid;
+    place-items: center;
+}
+
+.card-comment {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 50%;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1)
+}
+
+.comment-box {
+    padding: 1%;
+}
+
+.comment-area textarea {
+    resize: none;
+    border: 1px solid #ad9f9f;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ffffff;
+    outline: 0;
+    box-shadow: 0 0 0 1px rgb(255, 0, 0) !important;
+}
 
 @media (max-width: 215px) {}
