@@ -1,0 +1,8 @@
+Análisis de funcionalidades:
+-Mostrar la importancia de la ODS 14 con cards
+-Mostrar las metas
+-Carrusel con las agrupaciones e imágenes
+-Visualizar y crear comentarios
+-Visualizar y descargar pdf's
+-Mostrar videos y documentales
+-Barra de busqueda
