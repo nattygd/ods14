@@ -77,7 +77,7 @@ $(document).ready(function() {
         },
         submitHandler: (form) => {
             const data = Object.fromEntries(new FormData(form));
-            window.location.href = "index.html";
+            window.location.href = "home.html";
             console.log('Validado');
             console.log(data);
         }
@@ -148,7 +148,7 @@ $(document).ready(function() {
         },
         submitHandler: (form) => {
             const data = Object.fromEntries(new FormData(form));
-            window.location.href = "inicio-sesion.html";
+            window.location.href = "home.html";
             console.log('Validado');
             console.log(data);
         }
