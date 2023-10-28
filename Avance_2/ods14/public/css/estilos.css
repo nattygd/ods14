@@ -307,6 +307,10 @@ iframe {
     font-size: 100px !important;
 }
 
+.img-ballena{
+    width: 100%;
+}
+
 /* Imagen cuadrada */
 
 .imagen-cuadrada {
@@ -379,11 +383,11 @@ iframe {
 }
 
 .flip-card-front h1.numero-card {
-    font-size: 120px;
+    font-size: 350%;
 }
 
 .flip-card-front h1.texto-card {
-    font-size: 75px;
+    font-size: 350%;
 }
 
 .flip-card-back {
@@ -569,6 +573,7 @@ iframe {
 .fila {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 /*Comentar*/
