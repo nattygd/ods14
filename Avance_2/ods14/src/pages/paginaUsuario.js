@@ -1,4 +1,8 @@
 import React from "react";
+import ReactDom from "react-dom";
+import reportajes from "../json/listaReportajes.json"
+import Reportajes from "../functions/Reportajes";
+import Reportajes2 from "../functions/Reportajes";
 import redireccionEnlace from "../functions/redireccionEnlace";
 
 class PaginaUsuario extends React.Component {
@@ -53,6 +57,38 @@ class PaginaUsuario extends React.Component {
 
                 <div className="cuerpo p-4">
                     <h1 className="my-4 text-center">Reportajes</h1>
+
+                    <h3 className="my-4">Forma 1</h3>
+                    ReactDOM.render(<React.StrictMode><Reportajes /></React.StrictMode>, document.getElementById('app'));
+                    <h3 className="my-4">Forma 2</h3>
+                    ReactDOM.createRoot(document.getElementById('root')).render(<Reportajes />)
+
+                    <h3 className="my-4">Forma 3</h3>
+                    <table className="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Titulo</th>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">PDF</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {
+                                reportajes.map((reportajes, i) => (
+                                    <tr key={i}>
+                                        <th scope="row">{i}</th>
+                                        <td>{reportajes.Titulo}</td>
+                                        <td>{reportajes.Autor}</td>
+                                        <td>{reportajes.Descripcion}</td>
+                                        <td><a href={reportajes.PDF}><img src="images/icono-pdf.png" width={50}></img></a></td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
 
                     <div className="Enlaces">
                         <ul className="fila">
@@ -142,7 +178,7 @@ class PaginaUsuario extends React.Component {
                             </div>
                         </ul>
                     </div>
-                </div>
+                </div >
 
                 <div className="comentar">
                     <div className="card-comment">
