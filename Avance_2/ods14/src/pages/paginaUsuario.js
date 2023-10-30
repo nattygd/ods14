@@ -61,7 +61,7 @@ class PaginaUsuario extends React.Component {
                     <h3 className="my-4">Forma 1</h3>
                     ReactDOM.render(<React.StrictMode><Reportajes /></React.StrictMode>, document.getElementById('app'));
                     <h3 className="my-4">Forma 2</h3>
-                    ReactDOM.createRoot(document.getElementById('root')).render(<Reportajes />)
+                    ReactDOM.createRoot(document.getElementById('root')).render(<Reportajes />);
 
                     <h3 className="my-4">Forma 3</h3>
                     <table className="table table-hover">
