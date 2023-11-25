@@ -4,6 +4,7 @@ import Login from './pages/login';
 import Registro from './pages/registro';
 import PaginaUsuario from './pages/paginaUsuario';
 import Biblioteca from './pages/biblioteca';
+import PaginaAdmin from './pages/paginaAdmin';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/registro' element={<Registro />} />
           <Route exact path='/paginaUsuario' element={<PaginaUsuario />} />
+          <Route exact path='/paginaAdmin' element={<PaginaAdmin />} />
           <Route exact path='/biblioteca' element={<Biblioteca />} />
         </Routes>
       </Router>

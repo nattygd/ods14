@@ -408,4 +408,20 @@ a:hover {
     box-shadow: 0 0 0 1px rgb(255, 0, 0) !important;
 }
 
+//CRUD
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.table{
+    margin-top: 2%;
+}
+
+
+
 @media (max-width: 215px) {}
