@@ -26,7 +26,7 @@ app.post("/create", (req, res) => {
             if(error){
                 console.log(error);
             }else{
-                res.send("Reportaje registrado");
+                res.send(resultado);
             }
         });
 });
@@ -40,7 +40,8 @@ app.get("/reportajes", (req, res) => {
             }else{
                 res.send(resultado);
             }
-        });
+        }
+    );
 });
 
 //actualizar
@@ -57,7 +58,22 @@ app.put("/actualizar", (req, res) => {
             if(error){
                 console.log(error);
             }else{
-                res.send("Reportaje actualizado");
+                res.send(resultado);
+            }
+        });
+});
+
+//eliminar
+app.delete("/eliminar/:idReportaje", (req, res) => {
+    const idReportaje=req.params.idReportaje;
+
+    bd.query('DELETE FROM reportaje WHERE idReportaje=?',
+        idReportaje,
+        (error, resultado) => {
+            if(error){
+                console.log(error);
+            }else{
+                res.send(resultado);
             }
         });
 });

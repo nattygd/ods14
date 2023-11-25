@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+/*import React, { useEffect, useState } from "react"
 
 function useReportajes() {
     const [reportajes, setReportajes] = useState([])
@@ -53,4 +53,4 @@ export default function Reportajes() {
             </tbody>
         </table>
     )
-}
+}*/

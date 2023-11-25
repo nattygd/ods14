@@ -3,8 +3,8 @@ import Inicio from './pages/inicio';
 import Login from './pages/login';
 import Registro from './pages/registro';
 import PaginaUsuario from './pages/paginaUsuario';
-import Biblioteca from './pages/biblioteca';
 import PaginaAdmin from './pages/paginaAdmin';
+import Biblioteca from './pages/biblioteca';
 
 function App() {
   return (

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Axios from "axios";
 
+import Swal from 'sweetalert2';
+
 function ListaReportajes() {
     const [titulo, setTitulo] = useState("");
     const [autor, setAutor] = useState("");
@@ -8,7 +10,7 @@ function ListaReportajes() {
     const [link, setLink] = useState("");
     const [idReportaje, setIdReportaje] = useState();
 
-    const [editar, setEditar]=useState(false);
+    const [editar, setEditar] = useState(false);
 
     const [reportajes, setReportajes] = useState([]);
 
@@ -20,8 +22,18 @@ function ListaReportajes() {
             link: link
         }).then(() => {
             obtenerReportajes();
-            alert("Reportaje registrado");
-        });
+            limpiarDatos();
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Reportaje registrado exitosamente",
+                html: "<i>El reportaje <strong>" + titulo + "</strong> fue registrado</i>",
+                showConfirmButton: false,
+                timer: 2300
+            });
+        }).catch(error => {
+            console.error("Axios error:", error);
+        })
     }
 
     const actualizar = () => {
@@ -33,11 +45,28 @@ function ListaReportajes() {
             link: link
         }).then(() => {
             obtenerReportajes();
-            alert("Actualizado");
+            limpiarDatos();
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Actualizado exitosamente",
+                html: "<i>El reportaje <strong>" + titulo + "</strong> fue actualizado</i>",
+                showConfirmButton: false,
+                timer: 2300
+            });
         });
     }
 
-    const editarReportajes=(val) => {
+    const limpiarDatos = () => {
+        setTitulo("");
+        setAutor("");
+        setDescripcion("");
+        setLink("");
+
+        setEditar(false);
+    }
+
+    const editarReportajes = (val) => {
         setEditar(true);
 
         setTitulo(val.titulo);
@@ -49,6 +78,34 @@ function ListaReportajes() {
 
     }
 
+    const eliminar = (idReportaje) => {
+        Swal.fire({
+            title: "Estás segur@?",
+            text: "¡No podrás revertir esto!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            cancelButtonText: "Cancelar",
+            confirmButtonText: "¡Sí, eliminar!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Axios.delete(`http://localhost:3001/eliminar/${idReportaje}`
+                ).then(() => {
+                    obtenerReportajes();
+                    limpiarDatos();
+
+                });
+
+                Swal.fire({
+                    title: "¡Eliminado!",
+                    text: "El reportaje fue eliminado",
+                    icon: "success"
+                });
+            }
+        });
+    }
+
     const obtenerReportajes = () => {
         Axios.get("http://localhost:3001/reportajes",).then((response) => {
             setReportajes(response.data);
@@ -58,7 +115,7 @@ function ListaReportajes() {
     obtenerReportajes();
 
     return (
-        <div className="formulario col-md-10">
+        <div className="formulario">
             <div className="card text-center">
                 <div className="card-header">Gestión de reportajes</div>
                 <div className="card-body">
@@ -84,49 +141,52 @@ function ListaReportajes() {
                 </div>
                 <div className="card-footer text-muted">
                     {
-                        editar?
-                        <div>
-                        <button type="button" className="btn btn-success m-2" onClick={actualizar}>Actualizar</button>
-                        <button type="button" className="btn btn-danger m-2" onClick={agregarReportaje}>Cancelar</button>
-                        </div>
-                        :
-                        <button type="button" className="btn btn-success" onClick={agregarReportaje}>Registrar</button>
+                        editar ?
+                            <div>
+                                <button type="button" className="btn btn-success m-2" onClick={actualizar}>Actualizar</button>
+                                <button type="button" className="btn btn-danger m-2" onClick={limpiarDatos}>Cancelar</button>
+                            </div>
+                            :
+                            <button type="button" className="btn btn-success" onClick={agregarReportaje}>Registrar</button>
 
                     }
                 </div>
             </div>
 
-            <table className="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Titulo</th>
-                        <th scope="col">Autor</th>
-                        <th scope="col">Descripcion</th>
-                        <th scope="col">Link</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        reportajes.map((val, key) => {
-                            return <tr>
+            <div className="table-responsive">
+                <table className="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col" style={{ maxWidth: "200px" }}>Link</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {reportajes.map((val, key) => {
+                            return <tr key={val.idReportaje}>
                                 <th scope="row">{val.idReportaje}</th>
                                 <td>{val.titulo}</td>
                                 <td>{val.autor}</td>
                                 <td>{val.descripcion}</td>
-                                <td>{val.link}</td>
+                                <td style={{ maxWidth: "200px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}><a href={val.link} target="_blank" rel="noopener noreferrer">
+                                    {val.link}
+                                </a></td>
                                 <td>
                                     <div className="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" onClick={() => {editarReportajes(val)}} className="btn btn-warning">Editar</button>
-                                        <button type="button" className="btn btn-danger">Eliminar</button>
+                                        <button type="button" onClick={() => { editarReportajes(val) }} className="btn btn-warning">Editar</button>
+                                        <button type="button" onClick={() => { eliminar(val.idReportaje) }} className="btn btn-danger">Eliminar</button>
                                     </div>
                                 </td>
                             </tr>
                         })
-                    }
-                </tbody>
-            </table>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }
