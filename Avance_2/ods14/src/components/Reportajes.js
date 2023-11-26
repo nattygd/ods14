@@ -1,56 +1,47 @@
-/*import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 
 function useReportajes() {
-    const [reportajes, setReportajes] = useState([])
-
+    const [reportajes, setReportajes] = useState([]);
     useEffect(() => {
-        fetch("/json/listaReportajes.json")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error en la solicitud');
-                }
-                return response.json();
-            })
-            .then(datos => {
-                setReportajes(datos);
-                console.log({ datos });
-            })
-            .catch(error => {
-                console.error('Error en la solicitud:', error);
-            });
+        obtenerReportajes();
     }, []);
 
-
-    return reportajes
-}
-
-export default function Reportajes() {
-    const reportajes = useReportajes()
+    const obtenerReportajes = () => {
+        Axios.get("http://localhost:3001/reportajes").then((response) => {
+            setReportajes(response.data);
+        });
+    }
 
     return (
-        <table className="table table-hover" >
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col">Autor</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">PDF</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                {reportajes.map((reportajes, i) => (
-                    <tr key={i}>
-                        <th scope="row">{i}</th>
-                        <td>{reportajes.Titulo}</td>
-                        <td>{reportajes.Autor}</td>
-                        <td>{reportajes.Descripcion}</td>
-                        <td><a href={reportajes.PDF}><img src="images/icono-pdf.png" width={50}></img></a></td>
+        <div className="table-responsive">
+            <table className="table table-hover table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Link</th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {reportajes.map((val, key) => {
+                        return <tr key={val.idReportaje}>
+                            <th scope="row">{val.idReportaje}</th>
+                            <td>{val.titulo}</td>
+                            <td>{val.autor}</td>
+                            <td>{val.descripcion}</td>
+                            <td style={{ maxWidth: "200px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}><a href={val.link} target="_blank" rel="noopener noreferrer">
+                                {val.link}
+                            </a></td>
+                        </tr>
+                    })
+                    }
+                </tbody>
+            </table>
+        </div>
     )
-}*/
+}
+
+export default useReportajes;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
 import Swal from 'sweetalert2';
@@ -13,6 +13,10 @@ function ListaReportajes() {
     const [editar, setEditar] = useState(false);
 
     const [reportajes, setReportajes] = useState([]);
+
+    useEffect(() => {
+        obtenerReportajes();
+    }, []);
 
     const agregarReportaje = () => {
         Axios.post("http://localhost:3001/create", {
@@ -75,7 +79,6 @@ function ListaReportajes() {
         setLink(val.link);
 
         setIdReportaje(val.idReportaje);
-
     }
 
     const eliminar = (idReportaje) => {
@@ -90,11 +93,9 @@ function ListaReportajes() {
             confirmButtonText: "¡Sí, eliminar!"
         }).then((result) => {
             if (result.isConfirmed) {
-                Axios.delete(`http://localhost:3001/eliminar/${idReportaje}`
-                ).then(() => {
+                Axios.delete(`http://localhost:3001/eliminar/${idReportaje}`).then((result) => {
                     obtenerReportajes();
                     limpiarDatos();
-
                 });
 
                 Swal.fire({
@@ -107,12 +108,10 @@ function ListaReportajes() {
     }
 
     const obtenerReportajes = () => {
-        Axios.get("http://localhost:3001/reportajes",).then((response) => {
+        Axios.get("http://localhost:3001/reportajes").then((response) => {
             setReportajes(response.data);
         });
     }
-
-    obtenerReportajes();
 
     return (
         <div className="formulario">
@@ -161,7 +160,7 @@ function ListaReportajes() {
                             <th scope="col">Titulo</th>
                             <th scope="col">Autor</th>
                             <th scope="col">Descripcion</th>
-                            <th scope="col" style={{ maxWidth: "200px" }}>Link</th>
+                            <th scope="col">Link</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -172,7 +171,7 @@ function ListaReportajes() {
                                 <td>{val.titulo}</td>
                                 <td>{val.autor}</td>
                                 <td>{val.descripcion}</td>
-                                <td style={{ maxWidth: "200px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}><a href={val.link} target="_blank" rel="noopener noreferrer">
+                                <td><a href={val.link} target="_blank" rel="noopener noreferrer">
                                     {val.link}
                                 </a></td>
                                 <td>

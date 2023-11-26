@@ -1,5 +1,4 @@
 import React from "react";
-import redireccionEnlace from "../functions/redireccionEnlace.js";
 import ListaReportajes from "../components/listaReportajes.js";
 
 class PaginaAdmin extends React.Component {
