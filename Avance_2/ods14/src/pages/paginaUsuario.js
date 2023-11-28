@@ -55,7 +55,6 @@ class PaginaUsuario extends React.Component {
                 <div className="cuerpo p-4">
                     <h1 className="my-4 text-center">Reportajes</h1>
 
-                    
                     <div>
                         <Reportajes />
                     </div>

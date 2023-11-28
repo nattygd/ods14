@@ -3,10 +3,7 @@
 @import "../scss/FlipCards.scss";
 @import "../scss/Videos.scss";
 
-.logo {
-    display: flex;
-    align-items: center;
-}
+
 
 .navbar {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -17,6 +14,12 @@
 
 .navbar-nav {
     margin-left: 33%;
+}
+
+.signin-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .signin-button a {
@@ -48,6 +51,12 @@
 
 .btn-primary:focus {
     box-shadow: none;
+}
+
+.login-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-button a {

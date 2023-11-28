@@ -61,11 +61,11 @@ class Login extends React.Component {
               <a href="registro" className="No_cuenta">¿No tienes una cuenta? Registrate</a>
             </div>
           </form>
-        </div>
-        <div style={{ marginTop:'28vh' }}></div>
+        </div>        
         <div className='footerComponent'>
           <FooterComponent />
-        </div></>
+        </div>
+      </>
     );
   }
 }

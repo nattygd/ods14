@@ -1,28 +1,38 @@
-import React from 'react'
+import React from "react";
 
 export const FooterComponent = () => {
     return (
         <div>
-            <footer class="footer-07">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 text-center">
-                            <h2 class="footer-heading"><a href="#" class="logo"><img src="images/logo.png"></img>ODS14</a></h2>
+            <footer className="footer-07">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-md-4 text-center col-12 logo-footer">
+                            <h2 className="footer-heading logo-footer">
+                                <a href="#" className="logo">
+                                    <img src="images/logo.png"></img>ODS14
+                                </a>
+                            </h2>
                         </div>
-                        <div class="col-md-8 text-center">
-                            <p class="menu">
-                                <a href="#">Inicio</a>
-                                <a href="#important">Importancia</a>
-                                <a href="#objectives">Metas</a>
-                                <a href="#groups">Agrupaciones</a>
-                            </p>
+                        <div className="col-md-8 text-center col-12 logo-footer">
+                            <a className="menu" href="#">
+                                Inicio
+                            </a>
+                            <a className="menu" href="#important">
+                                Importancia
+                            </a>
+                            <a className="menu" href="#objectives">
+                                Metas
+                            </a>
+                            <a className="menu" href="#groups">
+                                Agrupaciones
+                            </a>
                         </div>
                     </div>
-                    <div class="col-md-12 text-center">
+                    <div className="col-md-12 text-center">
                         <p>Copyright ODS14</p>
                     </div>
                 </div>
             </footer>
         </div>
-    )
-}
+    );
+};
