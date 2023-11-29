@@ -1,0 +1,73 @@
+@import '../scss/Variables.scss';
+
+.flip-card {
+    background-color: transparent;
+    width: auto;
+    height: 350px;
+    border: 1px solid #f1f1f1;
+    border-radius: 25px;
+    perspective: 1000px;
+    margin: 2rem 0;
+    background-image: url("https://img.freepik.com/vector-premium/ilustracion-fondo-mar-tiburones-peces_104785-705.jpg");
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.flip-card-front {
+    background-color: $color_tarjeta;
+    color: black;
+
+    h1.numero-card {
+        font-size: 100px;
+    }
+
+    h1.texto-card {
+        font-size: 300%;
+    }
+}
+
+.flip-card-back {
+    background-color: $color_tarjeta;
+    color: black;
+    transform: rotateY(180deg);
+
+    p {
+        font-size: 20px;
+    }
+
+    h1, p {
+        color: black;
+    }
+}
+
+.custom-heigth {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: large;
+}
